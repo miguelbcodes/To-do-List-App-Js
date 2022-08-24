@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+// Color pallete
+$darker-gray: #212529;
+$dark-gray: #495057;
+$light-gray: #CED4DA;
+$pink: #EB4764;
+$green: #7DF196;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $darker-gray;
+  color: $light-gray;
+
+  font-family: 'Inter', sans-serif;
+
+  display: grid;
+  place-items: center;
+}
+
+header {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: $green;
+}
+
+.input-todo-card {
+  width: 53.5rem;
+  padding: 2rem;
+  background-color: $dark-gray;
+  border-radius: .75rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#add-todo-btn {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+
+  display: flex;
+}
+
+.input-todo-card {
+  input {
+    width: 100%;
+    
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+
+    font: inherit;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: $light-gray;
+  }
+
+  input::placeholder{
+    font-size: 1.5rem;
+    color: $light-gray;
+  }
+}
