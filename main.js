@@ -22,7 +22,7 @@ function showTodos() {
         <div id="todo-text-container-${index}" class="todo-text-container">
           <input
             id="check-todo-btn-${index}"
-            class="heck-todo-btn"
+            class="check-todo-btn"
             onclick="doneTodo(${index})"
             type="checkbox">
           <input
@@ -98,6 +98,10 @@ function editTodo(index){
   // Make the text editable
   const todo_text_el = document.getElementById(`todo-text-${index}`);
   todo_text_el.removeAttribute('readonly')
+  todo_text_el.style.color = '#EB4764';
+  const end_text = todo_text_el.value.length;
+  todo_text_el.setSelectionRange(0, end_text);
+  todo_text_el.focus();
 
   // Remove edit button from the DOM
   let btn_container_el = document.getElementById(`btn-container-${index}`);
@@ -106,6 +110,7 @@ function editTodo(index){
   // Add confirm edit button to the DOM
   let confirm_edit_btn = document.createElement('button');
   confirm_edit_btn.setAttribute('id', `confirm-edit-btn-${index}`);
+  confirm_edit_btn.setAttribute('class', 'confirm-edit-btn');
   confirm_edit_btn.innerHTML = `
     <img
       id="confirm-edit-icon"
